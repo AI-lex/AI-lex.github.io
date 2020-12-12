@@ -6,41 +6,36 @@ import json
 ## table data structure: name / wish decr / token /
 
 json_list = {
-    "token1" :{
+    "diecachhh" :{
         "name": "Johanna",
         "match": "",
-        "descr": "windelweich",
-        "wish": "windel",
-        "img": "/img/img1.png"
+        "wish": "",
+        "img": ""
     },
-    "token2" :{
+    "legsnoob" :{
         "name": "Hussein",
         "match": "",
-        "descr": "windelweich",
-        "wish": "ziggen",
-        "img": "/img/img2.png"
+        "wish": "",
+        "img": ""
     },
-    "token3" :{
+    "swollak" :{
         "name": "Viola",
         "match": "",
-        "descr": "windelweich",
-        "wish": "koks",
-        "img": "/img/img3.png"
+        "wish": "",
+        "img": ""
     },
-    "token4" :{
+    "machhini" :{
         "name": "Maxim",
         "match": "",
-        "descr": "windelweich",
-        "wish": "windelweich",
-        "img": "/img/img4.png"
+        "wish": "",
+        "img": ""
     },
 
-    "token5" :{
+    "nono" :{
         "name": "Alexander",
         "match": "",
-        "descr": "windelweich",
-        "wish": "windelweich",
-        "img": "/img/img5.png"
+        "wish": "",
+        "img": ""
     }
 }
 
@@ -53,7 +48,18 @@ def pick_random(pool):
 
 ## match logic
 match_pool = ["Johanna", "Hussein", "Viola", "Maxim", "Alexander"]
-token_list = ["token1", "token2", "token3", "token4", "token5"]
+token_list = ["diecachhh", "legsnoob", "swollak", "machhini", "nono"]
+wish_dict = {"Johanna": "Glossybox geht einfach immer",
+             "Hussein": "Mach dir keinen Kopf. Ziggen von Camel oder Knoppas",
+             "Viola": "Montenegranisch fuer Dummies",
+             "Maxim": "Online Coaching Peter Zwegat",
+             "Alexander": "Bartoel!! Dringend!!"}
+img_dict = {"Johanna": "img/jo.JPG",
+             "Hussein": "img/hu.JPG",
+             "Viola": "img/vi.JPG",
+             "Maxim": "img/ma.JPG",
+             "Alexander": "img/al.JPG"}
+
 random.shuffle(token_list)
 
 
@@ -74,6 +80,8 @@ for token in token_list:
 
     #print(str(json_list[token]["name"]) + " hat gezogen: " + str(match_name))
     json_list[token]["match"] = match_name
+    json_list[token]["wish"] = wish_dict[match_name]
+    json_list[token]["img"] = img_dict[match_name]
 # output list
 
 try:
